@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Email:
+  = @user.email
+%p
+  %b Phone:
+  = @user.phone
+
+= link_to 'Edit', edit_user_path(@user), class: 'btn btn-lg btn-warning'
+\|
+= link_to 'Back', users_path, class: 'btn btn-lg btn-danger'

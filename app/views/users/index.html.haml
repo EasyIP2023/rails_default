@@ -1,0 +1,23 @@
+%h1 Users Index
+
+%table.table.table-hover
+  %thead
+    %tr
+      %th Email
+      %th Phone
+      %th
+      %th
+      %th
+
+  %tbody
+    - @users.each do |user|
+      %tr
+        %td= user.name
+        %td= user.description
+        %td= link_to 'Show', user, class: 'btn btn-block btn-success'
+        %td= link_to 'Edit', edit_user_path(user), class: 'btn btn-block btn-warning'
+        %td= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-block btn-danger'
+
+%br
+
+= link_to 'New user', new_user_path, class: 'btn btn-block btn-primary'
