@@ -14,6 +14,8 @@
     = f.label :password_confirmation, "Confirm new password"
     %br/
     = f.password_field :password_confirmation, autocomplete: "off"
+  -# .field
+  -#   = recaptcha_tags
   .actions
     = f.submit "Change my password", class: 'btn btn-lg btn-danger'
 = render "devise/shared/links"
