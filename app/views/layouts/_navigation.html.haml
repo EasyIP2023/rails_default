@@ -7,4 +7,5 @@
     %li= link_to 'logout', destroy_user_session_path, class: 'right', method: :delete
 
   - else
+    %li= link_to 'places', places_path
     %li= link_to 'login', user_session_path, class: 'right'

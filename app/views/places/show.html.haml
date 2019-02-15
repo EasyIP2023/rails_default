@@ -1,0 +1,17 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @place.name
+%p
+  %b Latitude:
+  = @place.latitude
+%p
+  %b Longitude:
+  = @place.longitude
+
+= link_to 'Edit', edit_place_path(@place)
+\|
+= link_to 'Back', places_path
+
+= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=17&size=400x300&center=#{@place.latitude},#{@place.longitude}&key=#{$google_maps_api_key}", alt: "Map"

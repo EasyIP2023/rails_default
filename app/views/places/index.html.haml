@@ -1,0 +1,25 @@
+%h1 Listing places
+
+%table.table.table-hover
+  %thead
+    %tr
+      %th Name
+      %th Latitude
+      %th Longitude
+      %th
+      %th
+      %th
+
+  %tbody
+    - @places.each do |place|
+      %tr
+        %td= place.name
+        %td= place.latitude
+        %td= place.longitude
+        %td= link_to 'Show', place, class: 'btn btn-success btn-block'
+        %td= link_to 'Edit', edit_place_path(place), class: 'btn btn-warning btn-block'
+        %td= link_to 'Destroy', place, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-block'
+
+%br
+
+= link_to 'New Place', new_place_path, class: 'btn btn-primary btn-lg btn-block'
