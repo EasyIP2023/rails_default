@@ -25,4 +25,4 @@ production:
   database: rails_default_production
   host: 127.0.0.1
   username: <%= ENV.fetch('USER_NAME', 'rails_default') %>
-  password: <%= ENV.fetch('PASSWORD') %>
+  password: <%= ENV.fetch('PASSWORD', 'Password1234') %>
