@@ -37,6 +37,7 @@ set :rails_assets_groups, :assets # RAILS_GROUPS env value for the assets:precom
 set :keep_assets, 2 # set this to the number of versions to keep
 
 set :linked_dirs, %w(public/uploads public/assets log)
+set :linked_files, %w{config/master.key}
 
 namespace :puma do
   desc 'Create Directories for Puma Pids and Socket'
