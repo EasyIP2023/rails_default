@@ -6,8 +6,9 @@ Api Keys links
 * [google maps](https://developers.google.com/maps/documentation/javascript/get-api-key)
 * [recaptcha](https://www.google.com/recaptcha/admin)
 
+This next part is for my future references
 
-## install
+## Production Install
 ### Setup SSH keys
 To set this up, on the server type
 ```bash
