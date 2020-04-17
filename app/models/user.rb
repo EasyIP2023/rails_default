@@ -20,10 +20,13 @@ class User < ApplicationRecord
     roles.any? { |r| r.name.underscore.to_sym == role_sym }
   end
 
-  private
+  def full_name
+    first_name + ' ' + last_name
+  end
 
-    def phone_length
-      errors.add(:phone, 'Phone # length must be 10 ex. 9998887777') if self.phone.length != 10
-    end
+  private
+  def phone_length
+    errors.add(:phone, 'Phone # length must be 10 ex. 9998887777') if self.phone.length != 10
+  end
 
 end

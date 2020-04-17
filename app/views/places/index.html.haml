@@ -16,10 +16,10 @@
         %td= place.name
         %td= place.latitude
         %td= place.longitude
-        %td= link_to 'Show', place, class: 'btn btn-success btn-block'
-        %td= link_to 'Edit', edit_place_path(place), class: 'btn btn-warning btn-block'
-        %td= link_to 'Destroy', place, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-block'
+        %td= link_to 'Show', place, class: 'btn btn-block btn-success'
+        %td= link_to 'Edit', edit_place_path(place), class: 'btn btn-block btn-warning'
+        %td= link_to 'Destroy', place, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-block btn-danger'
 
 %br
 
-= link_to 'New Place', new_place_path, class: 'btn btn-primary btn-lg btn-block'
+= link_to 'New Place', new_place_path, class: 'btn btn-block btn-primary'

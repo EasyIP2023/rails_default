@@ -6,6 +6,16 @@ Api Keys links
 * [google maps](https://developers.google.com/maps/documentation/javascript/get-api-key)
 * [recaptcha](https://www.google.com/recaptcha/admin)
 
+
+## Installation/Usage
+Be sure to have yarn and nodejs installed before usage
+
+```bash
+yarn
+rails db:setup
+rails s
+```
+
 This next part is for my future references
 
 ## Production Install

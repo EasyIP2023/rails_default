@@ -1,11 +1,14 @@
-%ul.topnav
-  %li= link_to 'home', root_path, class: 'active'
-  - if user_signed_in?
-    - if current_user.has_role?(:admin)
-      %li= link_to 'users', users_path
-      %li= link_to 'roles', roles_path
-    %li= link_to 'logout', destroy_user_session_path, class: 'right', method: :delete
-
-  - else
-    %li= link_to 'places', places_path
-    %li= link_to 'login', user_session_path, class: 'right'
+%nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
+  = link_to 'home', root_path, class: 'navbar-brand'
+  %button.navbar-toggler{"aria-controls" => "navbarNav", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarNav", "data-toggle" => "collapse", :type => "button"}
+    %span.navbar-toggler-icon
+  #navbarNav.collapse.navbar-collapse
+    %ul.navbar-nav
+      - if user_signed_in?
+        - if current_user.has_role?(:admin)
+          %li.nav-item= link_to 'users', users_path, class: 'nav-link'
+          %li.nav-item= link_to 'roles', roles_path, class: 'nav-link'
+        %li.nav-item= link_to 'places', places_path, class: 'nav-link'
+        %li.nav-item= link_to 'logout', destroy_user_session_path, class: 'nav-link', method: :delete
+      - else
+        %li.nav-item= link_to 'login', user_session_path, class: 'nav-link'

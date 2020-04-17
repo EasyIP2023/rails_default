@@ -1,11 +1,17 @@
 = form_for @role do |f|
   = errors_for @role, false
 
-  .field
-    = f.label :name
-    = f.text_field :name
-  .field
-    = f.label :description
-    = f.text_field :description
-  .actions
-    = f.submit 'Save', class: 'btn btn-lg btn-success'
+  .row
+    .col-sm-12
+      .form-group
+        = f.label :name
+        = f.text_field :name, placeholder: 'name', class: 'form-control'
+  .row
+    .col-sm-12
+      .form-group
+        = f.label :description
+        = f.text_area :description, placeholder: 'description', class: 'form-control'
+  .row
+    .col-sm-12
+      .actions.right
+        = f.submit 'Submit', class: 'btn btn-success btn-lg'

@@ -10,8 +10,9 @@
   %b Longitude:
   = @place.longitude
 
-= link_to 'Edit', edit_place_path(@place)
+= link_to 'Edit', edit_place_path(@place), class: 'btn btn-warning btn-lg'
 \|
-= link_to 'Back', places_path
+= link_to 'Back', places_path, class: 'btn btn-danger btn-lg'
 
+%hr
 = image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=17&size=400x300&center=#{@place.latitude},#{@place.longitude}&key=#{$google_maps_api_key}", alt: "Map"

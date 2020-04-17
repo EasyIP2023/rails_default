@@ -1,8 +1,4 @@
-require "application_responder"
 class ApplicationController < ActionController::Base
-  self.responder = ApplicationResponder
-  respond_to :html
-
   protect_from_forgery with: :exception
   before_action :configure_permitted_parameters, if: :devise_controller?
 
@@ -23,5 +19,4 @@ class ApplicationController < ActionController::Base
     # added_attrs += [role_ids: []] # if current_user && current_user.admin?
     devise_parameter_sanitizer.permit :account_update, keys: added_attrs
   end
-
 end

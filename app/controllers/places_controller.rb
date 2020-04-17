@@ -1,5 +1,7 @@
 class PlacesController < ApplicationController
-  before_action :set_place, only: [:show, :edit, :update, :destroy]
+  load_and_authorize_resource
+  before_action :authenticate_user!
+  before_action :set_place, only: %i[show edit update destroy]
 
   # GET /places
   # GET /places.json
@@ -67,7 +69,7 @@ class PlacesController < ApplicationController
       @place = Place.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
+    # Only allow a list of trusted parameters through.
     def place_params
       params.require(:place).permit(:name, :latitude, :longitude)
     end

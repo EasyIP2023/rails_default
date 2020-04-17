@@ -37,7 +37,7 @@ module ApplicationHelper
         else
           'info'
         end
-        haml_tag :div, class: "alert alert-#{message_class} fade in" do
+        haml_tag :div, class: "alert alert-#{message_class} alert-dismissable" do
           haml_tag :a, '&times;'.html_safe, class: 'close', "data-dismiss" => "alert", "aria-label" => "close"
           haml_concat message
         end

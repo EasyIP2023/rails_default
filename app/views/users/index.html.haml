@@ -3,6 +3,8 @@
 %table.table.table-hover
   %thead
     %tr
+      %th First Name
+      %th Last Name
       %th Email
       %th Phone
       %th
@@ -12,8 +14,10 @@
   %tbody
     - @users.each do |user|
       %tr
-        %td= user.name
-        %td= user.description
+        %td= user.first_name
+        %td= user.last_name
+        %td= user.email
+        %td= user.phone
         %td= link_to 'Show', user, class: 'btn btn-block btn-success'
         %td= link_to 'Edit', edit_user_path(user), class: 'btn btn-block btn-warning'
         %td= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-block btn-danger'
